@@ -1,0 +1,15 @@
+﻿@model AzureConference.Models.SignUpView
+@{
+    ViewBag.Title = "Sign Up";
+}
+<h2>
+    Sign Up</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.GivenName) @Html.EditorFor(model => model.GivenName) <br />
+    @Html.LabelFor(model => model.Surname) @Html.EditorFor(model => model.Surname) <br />
+    @Html.LabelFor(model => model.Email) @Html.EditorFor(model => model.Email)
+    <input type="submit" value="Submit" />
+}
+
+@ViewBag.Message

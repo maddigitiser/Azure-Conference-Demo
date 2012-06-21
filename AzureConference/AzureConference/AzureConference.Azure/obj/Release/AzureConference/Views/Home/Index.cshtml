@@ -1,0 +1,53 @@
+﻿@model AzureConference.Models.SessionsAndSpeakersView
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+<thead>
+<tr>
+@foreach (var key in Model.Speakers.First().Keys)
+{ 
+    <th>@key</th>
+}
+</tr>
+</thead>
+<tbody>
+@foreach (var speaker in Model.Speakers)
+{
+    <tr>
+    @foreach (var field in speaker)
+    {
+        <td>@field.Value</td>
+    } 
+    </tr> 
+}
+ </tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+@foreach (var key in Model.Sessions.First().Keys)
+{ 
+    <th>@key</th>
+}
+</tr>
+</thead>
+<tbody>
+@foreach (var session in Model.Sessions)
+{
+    <tr>
+    @foreach (var field in session)
+    {
+        <td>@field.Value</td>
+    } 
+    </tr> 
+}
+ </tbody>
+</table>
+
+@Html.ActionLink("Sign Up!", "SignUp")
